@@ -7,7 +7,7 @@ This guide provides a basic deployment of a HashiCorp stack on Azure. This is a 
 * Creates one virtual machine in each private subnet using a custom managed image with Consul, Vault, and Nomad (enterprise or OSS versions) installed and configured (See note below.)
 * Uses Consul's cloud auto-join to connect the three instances into one Consul cluster.
 
-**Note:** Software version numbers and type (enterprise or OSS) depend on which Packer template and procedure you use. You can find the procedure and templates in the [packer-templates](https://github.com/TheHob/packer-templates/tree/master/hashistack) repo.
+**Note:** Software version numbers and type (enterprise or OSS) depend on which Packer template and procedure you use. You can find the procedure and templates in the [packer-templates](https://github.com/TheHob/packer-templates) repo.
 
 ## Deployment Prerequisites
 
