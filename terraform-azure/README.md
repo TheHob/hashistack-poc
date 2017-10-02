@@ -7,7 +7,7 @@ This guide provides a basic deployment of a HashiCorp stack on Azure. This is a 
 * Creates one virtual machine in each private subnet using a custom managed image with Consul, Vault, and Nomad (enterprise or OSS versions) installed and configured (See note below.)
 * Uses Consul's cloud auto-join to connect the three instances into one Consul cluster.
 
-**Note:** Software version numbers and type (enterprise or OSS) depend on which Packer template and procedure you use. You can find the procedure and templates in the [packer-templates](https://github.com/hashicorp-modules/packer-templates/tree/chad_hashistack_azure/hashistack) repo.
+**Note:** Software version numbers and type (enterprise or OSS) depend on which Packer template and procedure you use. You can find the procedure and templates in the [packer-templates](https://github.com/TheHob/packer-templates/tree/master/hashistack) repo.
 
 ## Deployment Prerequisites
 
@@ -52,9 +52,9 @@ On your client machine:
 
 1. Install Packer. See [https://www.packer.io/docs/install/index.html]() for more details.
 
-2. `git clone` the [hashicorp-modules/packer-templates](https://github.com/hashicorp-modules/packer-templates/tree/chad_hashistack_azure) repository
+2. `git clone` the [hashicorp-modules/packer-templates](https://github.com/TheHob/packer-templates/tree/master/hashistack) repository
 
-3. Follow the instructions for [building images locally](https://github.com/hashicorp-modules/packer-templates/blob/chad_hashistack_azure/README.md#building-hashistack-images-locally-outside-of-the-ci-pipeline) in the [packer-templates README file](https://github.com/hashicorp-modules/packer-templates/blob/chad_hashistack_azure/README.md). Please note that default installation will be OSS binaries unless you supply correct AWS credentials to download enterprise binaries from the appropriate S3 bucket.
+3. Follow the instructions for [building images locally](https://github.com/TheHob/packer-templates#building-hashistack-images-locally) in the [packer-templates README file](https://github.com/TheHob/packer-templates/blob/master/README.md). Please note that default installation will be OSS binaries unless you supply correct AWS credentials to download enterprise binaries from the appropriate S3 bucket.
 
 4. Once the Packer build process is complete, you can output the resource ID for the new image using the Azure CLI:
 
