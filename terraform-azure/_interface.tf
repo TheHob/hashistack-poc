@@ -28,13 +28,13 @@ variable "instancename" {
 
 # Optional variables
 variable "environment_name" {
-  default     = "consul"
+  default     = "hashistack"
   description = "Environment Name"
 }
 
 variable "location" {
-  default     = "West US"
-  description = "Region to deploy consul cluster to, e.g. West US"
+  default     = "West Europe"
+  description = "Region to deploy consul cluster to, e.g. West Europe"
 }
 
 /*
@@ -68,7 +68,7 @@ variable "cluster_size" {
 }
 
 variable "consul_datacenter" {
-  default     = "consul-westus"
+  default     = "consul-westeur"
   description = "Name to tag all cluster members with; this is used to auto-join members, e.g. 'consul-westus'"
 }
 
