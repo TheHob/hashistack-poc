@@ -54,6 +54,13 @@ variable "network_cidrs_public" {
   ]
 }
 */
+
+
+variable "virtual_network_name" {
+  description = "Virtual network in which to create subnets"
+}
+
+
 variable "network_cidrs_private" {
   default = [
     "172.31.48.0/20",

@@ -11,10 +11,6 @@ variable "location" {
   type = "string"
 }
 
-variable "virtual_network_name" {
-  type = "string"
-}
-
 variable "os" {
   type = "string"
 }
@@ -36,11 +32,6 @@ variable "network_cidr" {
 #  ]
 #}
 
-variable "jumphost_vm_size" {
-  default     = "Standard_A0"
-  description = "Azure virtual machine size for jumphost"
-}
-
 
 variable "virtual_network_name" {
   description = "Virtual network in which to create subnets"
@@ -52,11 +43,6 @@ variable "network_cidrs_private" {
     "172.31.64.0/20",
     "172.31.80.0/20",
   ]
-}
-
-variable "jumphost_vm_size" {
-  default     = "Standard_A0"
-  description = "Azure virtual machine size for jumphost"
 }
 
 # Outputs
