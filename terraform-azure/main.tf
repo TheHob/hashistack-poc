@@ -21,7 +21,7 @@ module "network" {
   resource_group_name   = "${azurerm_resource_group.main.name}"
   location              = "${var.location}"
   network_cidrs_private = "${var.network_cidrs_private}"
-  network_cidrs_public  = "${var.network_cidrs_public}"
+#  network_cidrs_public  = "${var.network_cidrs_public}"
   os                    = "${var.os}"
   public_key_data       = "${module.ssh_key.public_key_data}"
 }

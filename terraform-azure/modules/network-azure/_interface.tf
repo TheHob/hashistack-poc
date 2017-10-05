@@ -46,17 +46,22 @@ variable "jumphost_vm_size" {
 }
 
 # Outputs
+/*
 output "jumphost_ips_public" {
   value = ["${azurerm_public_ip.jumphost.*.ip_address}"]
 }
+*/
+
 
 output "jumphost_username" {
   value = "${module.images.os_user}"
 }
 
+/*
 output "subnet_public_ids" {
   value = ["${azurerm_subnet.public.*.id}"]
 }
+*/
 
 output "subnet_private_ids" {
   value = ["${azurerm_subnet.private.*.id}"]

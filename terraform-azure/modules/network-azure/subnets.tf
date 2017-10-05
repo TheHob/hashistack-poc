@@ -1,3 +1,4 @@
+/*
 resource "azurerm_subnet" "public" {
   count = "${length(var.network_cidrs_public)}"
 
@@ -6,6 +7,7 @@ resource "azurerm_subnet" "public" {
   virtual_network_name = "${azurerm_virtual_network.main.name}"
   address_prefix       = "${element(var.network_cidrs_public,count.index)}"
 }
+*/
 
 resource "azurerm_subnet" "private" {
   count = "${length(var.network_cidrs_private)}"

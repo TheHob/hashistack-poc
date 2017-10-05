@@ -42,12 +42,13 @@ variable "network_cidrs_public" {
 }
 */
 
+/*
 variable "network_cidrs_public" {
   default = [
     "172.31.0.0/20",
   ]
 }
-
+*/
 variable "network_cidrs_private" {
   default = [
     "172.31.48.0/20",
@@ -87,10 +88,12 @@ variable "private_key_filename" {
 }
 
 # Outputs
+/*
 output "jumphost_ssh_connection_strings" {
   value = "${formatlist("ssh-add %s && ssh -A -i %s %s@%s", var.private_key_filename, var.private_key_filename, module.network.jumphost_username, module.network.jumphost_ips_public)}"
 }
+*/
 
 output "consul_private_ips" {
-  value = "${formatlist("ssh %s@%s", module.consul_azure.os_user, module.consul_azure.consul_private_ips)}"
+  value = "${formatlist("ssh -i %s@%s", var.private_key_filename, module.consul_azure.os_user, module.consul_azure.consul_private_ips)}"
 }
