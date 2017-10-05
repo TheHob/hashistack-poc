@@ -21,6 +21,11 @@ variable "auto_join_tenant_id" {
   type = "string"
 }
 
+variable "instancename" {
+  type = "string"
+  description = "Unique name for this instance"
+}
+
 # Optional variables
 variable "environment_name" {
   default     = "consul"

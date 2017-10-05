@@ -5,7 +5,7 @@ terraform {
 provider "azurerm" {}
 
 resource "azurerm_resource_group" "main" {
-  name     = "${var.environment_name}"
+  name     = "${var.environment_name}-${var.instancename}"
   location = "${var.location}"
 }
 
@@ -17,7 +17,7 @@ module "ssh_key" {
 
 module "network" {
   source                = "modules/network-azure"
-  environment_name      = "${var.environment_name}"
+  environment_name      = "${var.environment_name}-${var.instancename}"
   resource_group_name   = "${azurerm_resource_group.main.name}"
   location              = "${var.location}"
   network_cidrs_private = "${var.network_cidrs_private}"
@@ -29,7 +29,7 @@ module "network" {
 module "consul_azure" {
   source                    = "modules/consul-azure"
   resource_group_name       = "${azurerm_resource_group.main.name}"
-  environment_name          = "${var.environment_name}"
+  environment_name          = "${var.environment_name}-${var.instancename}"
   location                  = "${var.location}"
   cluster_size              = "${var.cluster_size}"
   consul_datacenter         = "${var.consul_datacenter}"
