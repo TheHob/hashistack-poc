@@ -100,5 +100,6 @@ output "jumphost_ssh_connection_strings" {
 */
 
 output "consul_private_ips" {
-  value = "${formatlist("ssh -i %s@%s", var.private_key_filename, module.consul_azure.os_user, module.consul_azure.consul_private_ips)}"
+  #value = "${formatlist("ssh", "-i", var.private_key_filename, module.consul_azure.os_user, module.consul_azure.consul_private_ips)}"
+  value = "${formatlist("ssh -i ${var.private_key_filename} %s@%s", module.consul_azure.os_user, module.consul_azure.consul_private_ips)}"
 }
