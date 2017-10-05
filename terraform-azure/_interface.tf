@@ -33,7 +33,7 @@ variable "environment_name" {
 }
 
 variable "location" {
-  default     = "West Europe"
+  default     = "West US"
   description = "Region to deploy consul cluster to, e.g. West Europe"
 }
 
